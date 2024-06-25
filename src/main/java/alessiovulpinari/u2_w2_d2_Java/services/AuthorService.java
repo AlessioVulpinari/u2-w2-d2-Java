@@ -4,7 +4,6 @@ import alessiovulpinari.u2_w2_d2_Java.entities.Author;
 import com.github.javafaker.Faker;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -15,6 +14,7 @@ public class AuthorService {
 
     private final Faker faker = new Faker(Locale.ITALY);
     private final Random random = new Random();
+
     public List<Author> authors = new ArrayList<>();
 
     public List<Author> getAllAuthors() {
@@ -25,9 +25,7 @@ public class AuthorService {
         return this.authors.stream().filter(author -> author.getId() == authorId).toList().getFirst();
     }
 
-    public Author addAuthorToList() {
-        Author newAuthor = new Author(random.nextLong(), faker.name().firstName(), faker.name().lastName(),
-                faker.internet().emailAddress(), LocalDate.now().minusYears(random.nextInt(18, 90)));
+    public Author addAuthorToList(Author newAuthor) {
         this.authors.add(newAuthor);
         return newAuthor;
     }

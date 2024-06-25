@@ -26,7 +26,7 @@ public class AuthorController {
 
     @PostMapping
     public Author createAnAuthor(@RequestBody Author author) {
-        return authorService.addAuthorToList();
+        return authorService.addAuthorToList(author);
     }
 
     @PutMapping("/{authorId}")
