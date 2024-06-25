@@ -3,6 +3,7 @@ package alessiovulpinari.u2_w2_d2_Java.controllers;
 import alessiovulpinari.u2_w2_d2_Java.entities.BlogPost;
 import alessiovulpinari.u2_w2_d2_Java.services.BlogPostService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,6 +27,7 @@ public class BlogPostController {
     }
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public BlogPost createABlogPost(@RequestBody BlogPost blogPost) {
         return blogPostService.addBlogPostToList(blogPost);
     }

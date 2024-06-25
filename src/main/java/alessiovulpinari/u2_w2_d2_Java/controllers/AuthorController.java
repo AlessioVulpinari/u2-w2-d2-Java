@@ -3,6 +3,7 @@ package alessiovulpinari.u2_w2_d2_Java.controllers;
 import alessiovulpinari.u2_w2_d2_Java.entities.Author;
 import alessiovulpinari.u2_w2_d2_Java.services.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,6 +26,7 @@ public class AuthorController {
     }
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public Author createAnAuthor(@RequestBody Author author) {
         return authorService.addAuthorToList(author);
     }

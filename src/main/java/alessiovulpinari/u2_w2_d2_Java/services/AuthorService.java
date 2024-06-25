@@ -26,6 +26,7 @@ public class AuthorService {
     }
 
     public Author addAuthorToList(Author newAuthor) {
+        newAuthor.setAvatar("https://ui-avatars.com/api/?name=" + newAuthor.getName() + newAuthor.getSurname());
         this.authors.add(newAuthor);
         return newAuthor;
     }
@@ -33,13 +34,14 @@ public class AuthorService {
     public Author updateAnAuthor(long authorId, Author newAuthor) {
         Author author = getAuthorById(authorId);
 
-        author.setAvatar(newAuthor.getAvatar());
         author.setEmail(newAuthor.getEmail());
         author.setName(newAuthor.getName());
         author.setSurname(newAuthor.getSurname());
         author.setDateOfBirth(newAuthor.getDateOfBirth());
 
-        return newAuthor;
+        author.setAvatar("https://ui-avatars.com/api/?name=" + newAuthor.getName() + newAuthor.getSurname());
+
+        return author;
     }
 
     public void deleteAnAuthor(long authorId) {

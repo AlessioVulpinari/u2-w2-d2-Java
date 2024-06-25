@@ -1,6 +1,5 @@
 package alessiovulpinari.u2_w2_d2_Java.services;
 
-import alessiovulpinari.u2_w2_d2_Java.entities.Author;
 import alessiovulpinari.u2_w2_d2_Java.entities.BlogPost;
 import com.github.javafaker.Faker;
 import org.springframework.stereotype.Service;
